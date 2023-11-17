@@ -23,22 +23,22 @@ export default function LandingPage() {
           headingFont.className
         )}
       >
-        <div className="flex items-center border mb-4 shadow-sm py-4 px-6 tracking-widest bg-gradient-to-r from-amber-200 to-amber-100 text-amber-700 uppercase font-medium rounded-full">
+        <div className="flex items-center border mb-4 shadow-sm py-2 px-6 tracking-widest bg-gradient-to-r from-amber-200 to-amber-100 text-amber-700 uppercase font-medium rounded-full">
           <Medal className="h-8 w-8 mr-2" />
           No 1 task management
         </div>
 
-        <h1 className="scroll-m-20 text-4xl font-extrabold lg:text-6xl text-neutral-700 mb-4">
+        <h1 className="scroll-m-20 text-3xl font-extrabold lg:text-5xl text-neutral-700 mb-4">
           Taskify helps team move
         </h1>
-        <div className="text-3xl font-semibold tracking-widest lg:text-6xl p-2 px-8 w-fit bg-gradient-to-r from-fuchsia-600 to-pink-600 rounded-md text-transparent bg-clip-text">
+        <div className="text-3xl font-semibold tracking-widest lg:text-5xl p-2 px-8 w-fit bg-gradient-to-r from-fuchsia-600 to-pink-600 rounded-md text-transparent bg-clip-text">
           work forward.
         </div>
       </div>
 
       <div
         className={cn(
-          "text-sm md:text-lg text-neutral-500 max-w-xs md:max-w-2xl text-center mx-auto",
+          "text-sm md:text-base text-neutral-500 max-w-xs md:max-w-2xl text-center mx-auto",
           textFont.className
         )}
       >
