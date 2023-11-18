@@ -3,11 +3,14 @@ import { Button } from "@/components/ui/button"
 import { OrganizationSwitcher, UserButton } from "@clerk/nextjs"
 import { Plus } from "lucide-react"
 import React from "react"
+import MobileSidebar from "./mobile-sidebar"
 
 export default function Navbar() {
   return (
     <nav className="fixed z-50 top-0 w-full p-3 md:px-6 border-b shadow-sm bg-white flex items-center">
       <div className="flex items-center gap-x-4">
+        <MobileSidebar />
+
         <div className="">
           <Logo />
         </div>

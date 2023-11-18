@@ -4,6 +4,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion"
 import { buttonVariants } from "@/components/ui/button"
+import { Skeleton } from "@/components/ui/skeleton"
 import { cn } from "@/lib/utils"
 import { Activity, CreditCard, Layout, Settings } from "lucide-react"
 import Image from "next/image"
@@ -61,9 +62,7 @@ export default function SidebarItem({
         onClick={() => onToggleAccordion(organization.id)}
         className={cn(
           "flex items-center gap-x-2 py-1.5 px-3 text-neutral-700 rounded-lg hover:bg-neutral-500/10 transition text-start no-underline hover:no-underline",
-          isActive &&
-            !isExpanded &&
-            "!bg-sky-500/10 text-sky-500"
+          isActive && !isExpanded && "!bg-sky-500/10 text-sky-500"
         )}
       >
         <div className="flex items-center gap-x-2">
@@ -86,7 +85,7 @@ export default function SidebarItem({
             key={route.label}
             href={route.href}
             className={cn(
-              buttonVariants({ variant: "ghost", size:"sm" }),
+              buttonVariants({ variant: "ghost", size: "sm" }),
               "w-full text-left justify-start mb-1",
               pathname === route.href && "!bg-sky-500/10 !text-sky-500"
             )}
@@ -99,3 +98,13 @@ export default function SidebarItem({
     </AccordionItem>
   )
 }
+
+const SkeletonSidebarItem = () => (
+  <div className="flex items-center gap-x-2">
+    <Skeleton className="h-10 w-10" />
+
+    <Skeleton className="h-10 w-full" />
+  </div>
+)
+
+SidebarItem.Skeleton = SkeletonSidebarItem

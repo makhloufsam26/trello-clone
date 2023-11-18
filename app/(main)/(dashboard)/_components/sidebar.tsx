@@ -7,12 +7,7 @@ import { Plus } from "lucide-react"
 import Link from "next/link"
 import React from "react"
 import { useLocalStorage } from "usehooks-ts"
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion"
+import { Accordion } from "@/components/ui/accordion"
 import SidebarItem, { Organization } from "./sidebar-item"
 
 interface Props {
@@ -46,7 +41,7 @@ export default function Sidebar({ storageKey }: Props) {
   }
 
   if (!isLoadedOrg || !isLoadedOrgList || userMemberships.isLoading) {
-    return <Skeleton className="h-10 w-full" />
+    return <SidebarSkeleton />
   }
 
   return (
@@ -85,3 +80,19 @@ export default function Sidebar({ storageKey }: Props) {
     </>
   )
 }
+
+const SidebarSkeleton = () => (
+  <>
+    <div className="font-medium text-sm flex items-center justify-between mb-6">
+      <span className="pl-4 font-semibold">Workspaces</span>
+
+      <Skeleton className="h-10 w-10" />
+    </div>
+
+    <div className="space-y-2">
+      <SidebarItem.Skeleton />
+      <SidebarItem.Skeleton />
+      <SidebarItem.Skeleton />
+    </div>
+  </>
+)
