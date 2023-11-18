@@ -83,7 +83,11 @@ export default function SidebarItem({
         {routes.map((route) => (
           <Link
             key={route.label}
-            href={route.href}
+            href={
+              route.href.split("/").at(-1) === "settings"
+                ? route.href + "#/organization-settings"
+                : route.href
+            }
             className={cn(
               buttonVariants({ variant: "ghost", size: "sm" }),
               "w-full text-left justify-start mb-1",
